@@ -25,7 +25,7 @@ unless debug
 
   rm_rf wrapper if File.directory? wrapper
   system "gem unpack #{wrapper}.gem"
-  system "patch libarchive-0.1.1/ext/libarchive_internal.h < libarchive_internal.h.patch"
+  system "patch #{wrapper}/ext/libarchive_internal.h < libarchive_internal.h.patch"
 end
 exit $?.exitstatus if $?.exitstatus > 0
 
