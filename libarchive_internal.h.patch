@@ -1,0 +1,11 @@
+diff -ru libarchive-0.1.1/ext/libarchive_internal.h libarchive-0.1.1-patched/ext/libarchive_internal.h
+--- libarchive-0.1.1/ext/libarchive_internal.h	2023-01-23 17:45:31.924907413 +0000
++++ libarchive-0.1.1-patched/ext/libarchive_internal.h	2023-01-23 17:45:51.812465666 +0000
+@@ -28,7 +28,6 @@
+ #include <archive_entry.h>
+ 
+ #include <ruby.h>
+-#include <rubysig.h>
+ 
+ #ifdef _WIN32
+ #include "libarchive_win32.h"

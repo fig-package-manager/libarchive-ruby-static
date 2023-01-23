@@ -2,7 +2,7 @@ require 'fileutils'
 include FileUtils
 require 'rbconfig'  # For RbConfig::CONFIG
 
-ENV['BUILD_VERSION'] ||= '1.0.3'
+ENV['BUILD_VERSION'] ||= '1.0.6'
 
 debug = (ARGV[0]=="debug") # Set true to bypass all the removing, unpacking and sh-configure'ing
 
@@ -25,6 +25,7 @@ unless debug
 
   rm_rf wrapper if File.directory? wrapper
   system "gem unpack #{wrapper}.gem"
+  system "patch libarchive-0.1.1/ext/libarchive_internal.h < libarchive_internal.h.patch"
 end
 exit $?.exitstatus if $?.exitstatus > 0
 
