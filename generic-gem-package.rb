@@ -27,7 +27,7 @@ unless debug
   system "gem unpack #{wrapper}.gem"
   system "patch #{wrapper}/ext/libarchive_internal.h < libarchive_internal.h.patch"
 end
-exit $?.exitstatus if $?.exitstatus > 0
+exit $?.exitstatus if $? && $?.exitstatus > 0
 
 # Set up the linux gem package directory.
 
