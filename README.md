@@ -79,7 +79,7 @@ If you want to update the versions of the various sources, here is how to get th
 
 libarchive-wrapper:  gem fetch libarchive --version 0.1.1
 
-libarchive: wget http://libarchive.googlecode.com/files/libarchive-2.8.4.zip
+libarchive: wget https://github.com/libarchive/libarchive/releases/download/v3.6.2/libarchive-3.6.2.zip
 
 zlib: wget http://zlib.net/zlib125.zip -O zlib-1.2.5.zip
 

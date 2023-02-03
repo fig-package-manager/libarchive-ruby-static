@@ -2,14 +2,14 @@ require 'fileutils'
 include FileUtils
 require 'rbconfig'  # For RbConfig::CONFIG
 
-ENV['BUILD_VERSION'] ||= '1.0.6'
+ENV['BUILD_VERSION'] ||= '1.1.0'
 
 debug = (ARGV[0]=="debug") # Set true to bypass all the removing, unpacking and sh-configure'ing
 
 cfg = RbConfig::CONFIG # "c" for short...
 
 zlib = 'zlib-1.2.5'
-libar = 'libarchive-2.8.4'
+libar = 'libarchive-3.6.2'
 wrapper = 'libarchive-0.1.1'
 
 ruby_root = File.dirname cfg['bindir']  # For the Makefiles
