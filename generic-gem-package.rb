@@ -8,7 +8,7 @@ debug = (ARGV[0]=="debug") # Set true to bypass all the removing, unpacking and 
 
 cfg = RbConfig::CONFIG # "c" for short...
 
-zlib = 'zlib-1.2.5'
+zlib = 'zlib-1.2.13'
 libar = 'libarchive-3.6.2'
 wrapper = 'libarchive-0.1.1'
 

@@ -8,7 +8,7 @@ unzip = '"C:/Program Files/7-Zip/7z.exe" x'
 cfg = RbConfig::CONFIG # "c" for short...
 rbver = RUBY_VERSION =~ /1.8/ ? "-ruby186" : ""
 bldver = ( ENV['BUILD_VERSION'] ||= '1.0.5' )
-zlib = 'zlib-1.2.5'
+zlib = 'zlib-1.2.13'
 libar = 'libarchive-3.6.2' # TODO: test building with new version on windows
 wrapper = 'libarchive-0.1.1'
 ruby_root = File.dirname cfg['bindir']  # For the Makefiles

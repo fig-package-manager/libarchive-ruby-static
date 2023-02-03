@@ -2,6 +2,6 @@
 .vscode
 libarchive-0.1.1
 libarchive-3.6.2
-zlib-1.2.5
+zlib-1.2.13
 *.gem
 generic-gem-package/ext/*makefile

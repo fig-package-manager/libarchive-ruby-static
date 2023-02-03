@@ -81,7 +81,7 @@ libarchive-wrapper:  gem fetch libarchive --version 0.1.1
 
 libarchive: wget https://github.com/libarchive/libarchive/releases/download/v3.6.2/libarchive-3.6.2.zip
 
-zlib: wget http://zlib.net/zlib125.zip -O zlib-1.2.5.zip
+zlib: wget http://zlib.net/zlib1213.zip -O zlib-1.2.13.zip
 
 Misc: 
 
