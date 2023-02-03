@@ -22,10 +22,6 @@ unless debug
 
   rm_rf zlib if File.directory? zlib
   system "unzip #{zlib}.zip"
-
-  rm_rf wrapper if File.directory? wrapper
-  system "gem unpack #{wrapper}.gem"
-  system "patch #{wrapper}/ext/libarchive_internal.h < libarchive_internal.h.patch"
 end
 exit $?.exitstatus if $? && $?.exitstatus > 0
 
