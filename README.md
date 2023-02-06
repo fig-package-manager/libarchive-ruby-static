@@ -82,7 +82,3 @@ libarchive-wrapper:  gem fetch libarchive --version 0.1.1
 libarchive: wget https://github.com/libarchive/libarchive/releases/download/v3.6.2/libarchive-3.6.2.zip
 
 zlib: wget http://zlib.net/zlib1213.zip -O zlib-1.2.13.zip
-
-Misc: 
-
-About build-xplatform-probably-stale.rb - It was working last I checked, but I moved away from it due to the differing packaging needs of Windows and Linux:  Windows mswin32 and mingw32 gems can package the same binary as distinct architectures, but the Rubies on Ubuntu and RedHat are indistinguishable from an architecture perspective, so a single "x86_64-linux" build cannot be pre-built and packaged.  Instead, the gem on Linux needs to compile upon install.
