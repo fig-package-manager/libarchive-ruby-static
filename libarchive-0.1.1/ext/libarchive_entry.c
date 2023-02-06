@@ -829,7 +829,10 @@ static VALUE rb_libarchive_entry_copy_stat(VALUE self, VALUE v_filename) {
   filename = RSTRING_PTR(v_filename);
 
   if (stat(filename, &s) != 0) {
+    #pragma GCC diagnostic ignored "-Wformat="
+    #pragma GCC diagnostic ignored "-Wformat-extra-args"
     rb_raise(rb_eArchiveError, "Copy stat failed: %", strerror(errno));
+    #pragma GCC diagnostic pop
   }
 
   archive_entry_copy_stat(p->ae, &s);
@@ -847,7 +850,10 @@ static VALUE rb_libarchive_entry_copy_lstat(VALUE self, VALUE v_filename) {
   filename = RSTRING_PTR(v_filename);
 
   if (lstat(filename, &s) != 0) {
+    #pragma GCC diagnostic ignored "-Wformat="
+    #pragma GCC diagnostic ignored "-Wformat-extra-args"
     rb_raise(rb_eArchiveError, "Copy stat failed: %", strerror(errno));
+    #pragma GCC diagnostic pop
   }
 
   archive_entry_copy_stat(p->ae, &s);

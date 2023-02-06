@@ -89,7 +89,9 @@ static int rb_libarchive_reader_s_open_filename0(struct rb_libarchive_archive_co
     struct stat s;
 
     if (stat(filename, &s) != 0) {
+      #pragma GCC diagnostic ignored "-Wformat-security"
       archive_set_error(p->ar, -1, strerror(errno));
+      #pragma GCC diagnostic pop
       return (ARCHIVE_FATAL);
     }
   }
