@@ -4,6 +4,7 @@ libarchive-3.6.2
 zlib-1.2.13
 *.gem
 generic-gem-package/ext/*makefile
+generic-gem-package/ext/libarchive-0.1.1
 *.o
 *.so
 libarchive-0.1.1/ext/config.h
