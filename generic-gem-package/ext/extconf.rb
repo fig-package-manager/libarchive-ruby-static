@@ -2,18 +2,12 @@ require 'fileutils'
 include FileUtils
 require 'rbconfig'  # For RbConfig::CONFIG
 
-def patch_libarchive_reader_for_mac
-  return unless `uname` =~ /Darwin/
-  text = File.read("libarchive_reader.c")
-  File.open("libarchive_reader.c", 'w') { |f| f.puts text.gsub(/_close\(fd\);/, "close(fd);") }
-end
-
 debug = (ARGV[0]=="debug") # Set true to bypass all the removing, unpacking and sh-configure'ing
 
 cfg = RbConfig::CONFIG # "c" for short...
 
-zlib = 'zlib-1.2.5'
-libar = 'libarchive-2.8.4'
+zlib = 'zlib-1.2.13'
+libar = 'libarchive-3.6.2'
 wrapper = 'libarchive-0.1.1'
 
 ruby_root = File.dirname cfg['bindir']  # For the Makefiles
@@ -56,7 +50,6 @@ ENV['CFLAGS']  = "-fPIC -I#{build_root}/#{libar}/libarchive \
 -I#{cfg['archdir']} "
 
 cd "#{wrapper}/ext" do
-  patch_libarchive_reader_for_mac
   unless debug
     system "sh configure" unless debug or File.exist? 'Makefile'
     exit $?.exitstatus unless $?.nil? or $?.exitstatus == 0

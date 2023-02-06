@@ -1,7 +1,12 @@
 .devcontainer
 .vscode
-libarchive-0.1.1
-libarchive-2.8.4
-zlib-1.2.5
+libarchive-3.6.2
+zlib-1.2.13
 *.gem
 generic-gem-package/ext/*makefile
+generic-gem-package/ext/libarchive-0.1.1
+*.o
+*.so
+libarchive-0.1.1/ext/config.h
+libarchive-0.1.1/ext/config.log
+libarchive-0.1.1/ext/config.status
