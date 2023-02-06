@@ -1,5 +1,5 @@
 all:
-	ruby build.rb
+	ruby generic-gem-package/ext/extconf.rb
 
 clean:
 	cd libarchive-3.6.2/libarchive && make -f ../../libarchive-static-makefile clean
