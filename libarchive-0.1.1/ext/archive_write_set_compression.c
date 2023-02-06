@@ -5,15 +5,15 @@ static struct {
   int code;
   int (*setter)(struct archive *);
 } codes[] = {
-  { ARCHIVE_COMPRESSION_NONE,     archive_write_set_compression_none     },
-  { ARCHIVE_COMPRESSION_GZIP,     archive_write_set_compression_gzip     },
-  { ARCHIVE_COMPRESSION_BZIP2,    archive_write_set_compression_bzip2    },
+  { ARCHIVE_FILTER_NONE,     archive_write_add_filter_none     },
+  { ARCHIVE_FILTER_GZIP,     archive_write_add_filter_gzip     },
+  { ARCHIVE_FILTER_BZIP2,    archive_write_add_filter_bzip2    },
 #if ARCHIVE_VERSION_NUMBER >= 2005000
-  { ARCHIVE_COMPRESSION_COMPRESS, archive_write_set_compression_compress },
+  { ARCHIVE_FILTER_COMPRESS, archive_write_add_filter_compress },
 #endif
   // XXX:
   /*
-  { ARCHIVE_COMPRESSION_PROGRAM,  archive_read_support_compression_program  },
+  { ARCHIVE_FILTER_PROGRAM,  archive_read_support_filter_program  },
   */
   { -1,                           NULL                                      },
 };

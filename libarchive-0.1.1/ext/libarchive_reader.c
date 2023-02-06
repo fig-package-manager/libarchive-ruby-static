@@ -7,7 +7,7 @@ extern VALUE rb_cArchiveEntry;
 
 static void rb_libarchive_reader_close0(struct rb_libarchive_archive_container *p) {
   archive_read_close(p->ar);
-  archive_read_finish(p->ar);
+  archive_read_free(p->ar);
   p->ar = NULL;
 }
 
@@ -32,11 +32,11 @@ static VALUE rb_libarchive_reader_s_open0(int (*archive_open)(struct rb_libarchi
   }
 
   if (cmd != NULL) {
-    r = archive_read_support_compression_program(p->ar, cmd);
+    r = archive_read_support_filter_program(p->ar, cmd);
   } else if (compression != -1) {
     r = archive_read_support_compression(p->ar, compression);
   } else {
-    r = archive_read_support_compression_all(p->ar);
+    r = archive_read_support_filter_all(p->ar);
   }
 
   if (r != ARCHIVE_OK) {

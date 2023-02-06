@@ -5,14 +5,14 @@ static struct {
   int code;
   int (*setter)(struct archive *);
 } codes[] = {
-  { ARCHIVE_COMPRESSION_NONE,     archive_read_support_compression_none     },
-  { ARCHIVE_COMPRESSION_GZIP,     archive_read_support_compression_gzip     },
-  { ARCHIVE_COMPRESSION_BZIP2,    archive_read_support_compression_bzip2    },
-  { ARCHIVE_COMPRESSION_COMPRESS, archive_read_support_compression_compress },
+  { ARCHIVE_FILTER_NONE,     archive_read_support_filter_none     },
+  { ARCHIVE_FILTER_GZIP,     archive_read_support_filter_gzip     },
+  { ARCHIVE_FILTER_BZIP2,    archive_read_support_filter_bzip2    },
+  { ARCHIVE_FILTER_COMPRESS, archive_read_support_filter_compress },
   // XXX:
   /*
-  { ARCHIVE_COMPRESSION_PROGRAM,  archive_read_support_compression_program  },
-  { ARCHIVE_COMPRESSION_LZMA,     archive_read_support_compression_lzma     },
+  { ARCHIVE_FILTER_PROGRAM,  archive_read_support_filter_program  },
+  { ARCHIVE_FILTER_LZMA,     archive_read_support_filter_lzma     },
   */
   { -1,                           NULL                                      },
 };

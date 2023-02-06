@@ -7,7 +7,7 @@ extern VALUE rb_cArchiveEntry;
 
 static void rb_libarchive_writer_close0(struct rb_libarchive_archive_container *p) {
   archive_write_close(p->ar);
-  archive_write_finish(p->ar);
+  archive_write_free(p->ar);
   p->ar = NULL;
 }
 
@@ -32,7 +32,7 @@ static VALUE rb_libarchive_writer_s_open0(int (*archive_open)(struct rb_libarchi
   }
 
   if (cmd != NULL) {
-    r = archive_write_set_compression_program(p->ar,  cmd);
+    r = archive_write_add_filter_program(p->ar,  cmd);
   } else {
     r = archive_write_set_compression(p->ar, compression);
   }

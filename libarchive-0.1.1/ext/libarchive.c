@@ -8,7 +8,7 @@ VALUE rb_libarchive_s_version_number(VALUE self) {
 #if ARCHIVE_VERSION >= 2005000
   return INT2NUM(archive_version_number());
 #else
-  return INT2NUM(archive_version_stamp());
+  return INT2NUM(archive_version_number());
 #endif
 }
 
